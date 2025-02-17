@@ -48,3 +48,6 @@ class Exibidor {
         System.out.println("O maior número é: " + value);
     }
 }
+
+num2
+
