@@ -81,7 +81,8 @@ num2
 import java.util.Scanner;
 
 public class met2 {
-    public static void main(String[] args) {
+    public static <Talculadora> void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Insira um numero");
@@ -89,32 +90,104 @@ public class met2 {
         System.out.println("Insira outro numero");
         int n2 = scanner.nextInt();
 
-        Calculadora multiplicacao = new Calculadora(n1, n2);
-        int Soma = calculadora.max(n1, n2);
+
+        talculadora talculadora = new talculadora(n1,n2);
+
+
+        int resultadoSoma = talculadora.soma(n1,n2);
+
+
+        exibirValores(resultadoSoma);
+
 
         scanner.close();
+    }
 
-        public void exibirValores ( int Soma){
-            System.out.println(Soma);
-        }
+
+    public static void exibirValores(int resultadoSoma) {
+        System.out.println("A soma é: " + resultadoSoma);
     }
 }
- class calculadora {
-     private int n1;
-     private int n2;
-
-     public calculadora(int n1, int n2) {
-         this.n1;
-         this.n2;
-     }
-
-     public int soma() {
-         int max;
-
-         max = n1 * n2;
-
-         return max;
+class talculadora {
+    public int n1;
+    public int n2;
 
 
-     }
- }
+    public talculadora(int n1, int n2) {
+        this.n1 = n1;
+        this.n2 = n2;
+    }
+
+
+    public int soma(int n1, int n2) {
+        return n1 * n2;
+    }
+}
+
+num3
+
+import java.util.Scanner;
+
+public class met3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.println("Insira as notas do aluno.");
+        int nota1 = scanner.nextInt();
+        int nota2 = scanner.nextInt();
+
+
+        Aluno aluno = new Aluno(nota1, nota2);
+
+
+        aluno.calcularMedia();
+
+
+        aluno.verificarStatus();
+
+
+        System.out.println(aluno);
+
+
+        scanner.close();
+    }
+}
+class Aluno {
+    private int nota1;
+    private int nota2;
+    private int media;
+    private String status;
+
+
+    public Aluno(int nota1, int nota2) {
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+    }
+
+
+    public void calcularMedia() {
+        this.media = (nota1 + nota2) / 2; // Corrigido a fórmula da média
+    }
+
+
+    public void verificarStatus() {
+        if (media >= 7) {
+            this.status = "Aprovado";
+        } else if (media >= 5) {
+            this.status = "Recuperação";
+        } else {
+            this.status = "Reprovado";
+        }
+    }
+
+
+
+    public String toString() {
+        return "Notas do Aluno: Nota 1 = " + nota1 + ", Nota 2 = " + nota2 +
+                "\nMédia: " + media + "\nStatus: " + status;
+    }
+}
+
+num4
+  
