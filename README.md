@@ -190,4 +190,93 @@ class Aluno {
 }
 
 num4
-  
+  import java.util.Scanner;
+
+public class met4 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicita os números ao usuário
+        System.out.println("Escreva um numero");
+        int num1 = scanner.nextInt();
+        System.out.println("Escreva um numero");
+        int num2 = scanner.nextInt();
+        System.out.println("Escreva um numero");
+        int num3 = scanner.nextInt();
+
+        
+        Triangulo triangulo = new Triangulo(num1, num2, num3);
+
+        
+        int resultado = triangulo.calcularSoma();
+
+        
+        System.out.println("A área do triângulo é = " + resultado);
+
+        
+        System.out.println(triangulo.toString());
+
+        scanner.close();
+    }
+}
+public class Triangulo {
+
+    private int num1;
+    private int num2;
+    private int num3;
+
+    
+    public Triangulo(int num1, int num2, int num3) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.num3 = num3;
+    }
+
+    
+    public int calcularSoma() {
+        return num1 + num2 + num3;
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Triangulo [num1=" + num1 + ", num2=" + num2 + ", num3=" + num3 + "]";
+    }
+}
+
+num5
+
+public class met5 {
+
+    public static void main(String[] args) {
+
+        OperacaoMatematica opecacaomatematica = new OperacaoMatematica(100, 2 + 3);
+
+
+        System.out.println(opecacaomatematica.toString());
+    }
+}
+public class OperacaoMatematica {
+
+    private int numerador;
+    private int denominador;
+
+
+    public OperacaoMatematica(int numerador, int denominador) {
+        this.numerador = numerador;
+        this.denominador = denominador;
+    }
+
+
+    public double calcularResultado() {
+        return (double) numerador / denominador;
+    }
+
+
+
+    public String toString() {
+        return "Cálculo: " + numerador + " / (" + denominador + ") = " + calcularResultado();
+    }
+}
+
